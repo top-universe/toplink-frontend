@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Bug</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        .container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 300px calc(100% - 300px);
+        }
+        /* Sidebar styling begins here */
+        .container .left-sidebar{
+            background-color: #543864;
+            height: 100vh; 
+            padding: 1rem 1rem;
+        }
+        .left-sidebar .logo{
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+        }
+        .logo img, .logout img, .home-logout img{
+            margin-right: .3rem;
+        }
+        .logo > div, .logout, .home-logout{
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+        .left-sidebar{
+            overflow: auto;
+        }
+        .left-sidebar .links{
+            margin-top: 4rem;
+        }
+        .left-sidebar .links > li{
+            list-style: none;
+            margin-left: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        .left-sidebar .links > li a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        .left-sidebar li img, .left-sidebar li svg{
+            margin-right: 1rem;
+        }
+        .left-sidebar ul:last-child{
+            list-style: none;   
+            text-align: left;
+            margin-top: 1.3rem;
+            margin-left: 4.8rem;
+            padding-left: 1rem;
+            width: 150px;
+            border-left: 1px solid #fff;
+        }
+        .left-sidebar ul:last-child >li{
+            list-style: none;
+        }
+        .left-sidebar ul:last-child li a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .left-sidebar ul:last-child li{
+            margin-bottom: 1rem;
+        }
+        .left-sidebar ul:last-child li  a{
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+        }
+        /* Sidebar ends here */
+
+        /* Maincontent starts here */
+        .main-content{
+            height: 100vh;
+            overflow: auto;
+        }
+        .main-content .heading{
+            padding: 2rem 1.5rem 1.2rem;
+            border-bottom: 1px solid #ccc ;
+        }
+        .main-content .heading h1{
+            margin-bottom: .7rem;
+            font-size: 28px;
+        }
+        .main-content .heading h4{
+            font-size: 16px;
+            margin-bottom: .9rem;
+        }
+        .main-content .heading p{
+            font-size: 14px;
+            width: 70%;
+        }
+        .main-content .form{
+            padding: 1.2rem;
+        }
+        .main-content form{
+            background-color: #F1EAF5;
+            padding: 2rem 1rem;
+            border-radius: 2px;
+            max-width: 950px;
+        }
+        .main-content form > div{
+            margin-bottom: 1rem;
+        }
+        .main-content form input, textarea{
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 3.8rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+        textarea{
+            height: 10rem;
+            padding-top: 1.5rem;
+        }
+        .main-content form div:last-child{
+            text-align: center;
+        }
+        .main-content form button{
+            width: 60%;
+            background-color: #543864;
+            color: #ffffff;
+            border: none;
+            outline: none;
+            height: 3rem;
+            border-radius: 8px;
+            margin-top: .5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="left-sidebar">
+            <div class="logo">
+                <p>LOGO</p>
+                <div ><img src="assets\Back-icon.png" width="20px" alt="logout-image"><span>Back</span></div>
+            </div>
+            <div class="flex-align-btw">
+                <ul class="links">
+                    <li>
+                        <a href="#">
+                            <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.5734 0.971898C10.2833 0.697622 9.89924 0.5448 9.5 0.5448C9.10076 0.5448 8.71667 0.697622 8.42656 0.971898L0.857814 8.12502C0.626066 8.34432 0.441534 8.60863 0.315526 8.90176C0.189517 9.19488 0.124685 9.51065 0.125001 9.82971V18.5328C0.125415 19.1542 0.372528 19.7499 0.812022 20.1891C1.25152 20.6283 1.84742 20.875 2.46875 20.875H4.8125C5.4341 20.875 6.03024 20.6281 6.46978 20.1886C6.90932 19.749 7.15625 19.1529 7.15625 18.5313V14.625C7.15625 14.4178 7.23856 14.2191 7.38507 14.0726C7.53159 13.9261 7.7303 13.8438 7.9375 13.8438H11.0625C11.2697 13.8438 11.4684 13.9261 11.6149 14.0726C11.7614 14.2191 11.8438 14.4178 11.8438 14.625V18.5313C11.8438 19.1529 12.0907 19.749 12.5302 20.1886C12.9698 20.6281 13.5659 20.875 14.1875 20.875H16.5312C17.1529 20.875 17.749 20.6281 18.1885 20.1886C18.6281 19.749 18.875 19.1529 18.875 18.5313V9.82815C18.8749 9.50924 18.8097 9.1937 18.6834 8.90085C18.5572 8.60801 18.3725 8.34401 18.1406 8.12502L10.5734 0.968773V0.971898Z" 
+                                fill="white"/>
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li><a href="#" class="w-90"><img width="20px" src="assets\dashboard.png" alt=""> <span>Dashboard</span></a></li>
+                    <li><a href="#" class="w-85"><img width="20px" src="assets\analytics.png" alt=""> <span>Analytics</span></a></li>
+                    <li><a href="#" class="w-80"><img width="20px" src="assets\settings.png" alt=""> <span>Settings</span></a></li>
+                    <li><a href="#" class="w-70"><img width="20px" src="assets\Edit.png" alt=""> <span>Editor</span></a></li>
+                    <li><a href="#" class="w-90"><img width="20px" src="assets\commerce.png" alt=""> <span>Commerce</span></a></li>
+                    <li><a href="#" class="flex-align-center w-85 active"><img width="20px" src="assets\feedback-icon.png" alt=""><span>Feedback</span></a></li>
+                    <ul class="hide">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#" class="hover">Report a bug</a></li>
+                        <li><a href="#">Suggest a feature</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </ul>
+                
+                <div class="logout"><img src="assets\logout.png" alt="logout-image"><span>Log out</span></div>
+            </div>
+        </section>
+        
+        <section class="main-content">
+            <div class="heading">
+                <div class="head flex-space-btw w-95">
+                    <h1>Report a bug</h1>
+                    <svg width="5" height="20" viewBox="0 0 5 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.09874 0C2.6248 0 3.12931 0.210714 3.50129 0.585786C3.87327 0.960859 4.08224 1.46957 4.08224 2C4.08224 2.53043 3.87327 3.03914 3.50129 3.41421C3.12931 3.78929 2.6248 4 2.09874 4C1.57268 4 1.06817 3.78929 0.69619 3.41421C0.324211 3.03914 0.115234 2.53043 0.115234 2C0.115234 1.46957 0.324211 0.960859 0.69619 0.585786C1.06817 0.210714 1.57268 0 2.09874 0ZM2.09874 8C2.6248 8 3.12931 8.21071 3.50129 8.58579C3.87327 8.96086 4.08224 9.46957 4.08224 10C4.08224 10.5304 3.87327 11.0391 3.50129 11.4142C3.12931 11.7893 2.6248 12 2.09874 12C1.57268 12 1.06817 11.7893 0.69619 11.4142C0.324211 11.0391 0.115234 10.5304 0.115234 10C0.115234 9.46957 0.324211 8.96086 0.69619 8.58579C1.06817 8.21071 1.57268 8 2.09874 8ZM2.09874 16C2.6248 16 3.12931 16.2107 3.50129 16.5858C3.87327 16.9609 4.08224 17.4696 4.08224 18C4.08224 18.5304 3.87327 19.0391 3.50129 19.4142C3.12931 19.7893 2.6248 20 2.09874 20C1.57268 20 1.06817 19.7893 0.69619 19.4142C0.324211 19.0391 0.115234 18.5304 0.115234 18C0.115234 17.4696 0.324211 16.9609 0.69619 16.5858C1.06817 16.2107 1.57268 16 2.09874 16Z" fill="black"/>
+                    </svg></div>
+                <h4>Help us fix errors on Synque. Help Synque serve you better</h4>
+                <p>Kindly fill out the form below to report errors on the Synque App.<br> 
+                    Knowing what bugs you means its halfway fixed.
+                </p>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div>
+                        <input type="text" placeholder="Title of your error or bug report">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Location of bug. Enter where you noticed the bug">
+                    </div>
+                    <div>
+                        <textarea rowspan="30" placeholder="Enter Detailed Description of the  Error(s)or Bug(s) here."></textarea>
+                    </div>
+                    <div>
+                        <button>Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+       
+    </div>
+</body>
+</html>
