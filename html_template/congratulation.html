@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Congratulation</title>
+    <style>
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-ExtraBold.ttf);
+        font-weight: 800;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-Regular.ttf);
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-Bold.ttf);
+        font-weight: 700;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Metropolis", sans-serif;
+      }
+
+      body {
+        max-width: 1440px;
+        height: 1024px;
+        display: flex;
+      }
+
+      .firstColumn {
+        width: 50%;
+        padding: 7% 6%;
+        background-image: url(/toplink-frontend-/html_template/assets/congrats.png);
+        background-repeat: no-repeat;
+      }
+
+      .returnArrow {
+        margin-bottom: 56px;
+      }
+
+      .announcement {
+        display: grid;
+        place-items: center;
+      }
+
+      h2 {
+        font-family: "Metropolis";
+        font-size: 3rem;
+        font-weight: 800;
+        margin-top: 48px;
+        margin-bottom: 16px;
+        opacity: 0;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 400;
+        opacity: 0;
+      }
+
+      button {
+        background-color: #543864;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        width: 522px;
+        height: 72px;
+        margin-top: 190px;
+        cursor: pointer;
+        opacity: 0;
+        font-family: inherit;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      button:hover {
+        background-color: #a5a1a8;
+        color: rgb(255, 255, 255);
+      }
+
+      .slideIn {
+        animation: slideIn 1s ease-in forwards;
+      }
+
+      @keyframes slideIn {
+        0% {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translate(0);
+          opacity: 1;
+        }
+      }
+
+      h2.slideIn {
+        animation-delay: 1s;
+      }
+
+      p.slideIn {
+        animation-delay: 2s;
+      }
+
+      button.slideIn {
+        animation-delay: 3s;
+      }
+
+      .secondColumn {
+        background-color: #543864;
+        position: relative;
+        width: 50%;
+        height: inherit;
+        display: grid;
+        place-content: center;
+        overflow: hidden;
+      }
+
+      .image {
+        z-index: 1;
+      }
+
+      .shapeOne {
+        position: absolute;
+        border-radius: 50%;
+        width: 495px;
+        height: 495px;
+        background-color: #ffbd69;
+        left: -1%;
+        bottom: -33%;
+      }
+
+      .shapeTwo {
+        position: absolute;
+        width: 574px;
+        height: 574px;
+        border-radius: 50%;
+        right: -28%;
+        bottom: -32%;
+        background-color: #ac8bbe;
+      }
+
+      .shapeThree {
+        position: absolute;
+        border-radius: 50%;
+        width: 495px;
+        height: 495px;
+        background-color: #ffbd69;
+        left: -1%;
+        top: -46%;
+      }
+
+      .shapeFour {
+        position: absolute;
+        width: 574px;
+        height: 574px;
+        border-radius: 50%;
+        right: -28%;
+        top: -40%;
+        background-color: #ac8bbe;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="firstColumn">
+      <a href="#">
+        <img src="/toplink-frontend-/html_template/assets/Vector.png" class="returnArrow" />
+      </a>
+
+      <div class="announcement">
+        <img src="/toplink-frontend-/html_template/assets/Happy announcement-cuate 1.png" class="slideIn" />
+        <h2 class="slideIn">Voila, You did it!</h2>
+        <p class="slideIn">Congratulation on completing the process.</p>
+
+        <p class="slideIn">Proceed to create your mini website.</p>
+
+        <button type="submit" class="slideIn">Start Creating</button>
+      </div>
+    </div>
+
+    <div class="secondColumn">
+      <img src="/toplink-frontend-/html_template/assets/Connected-cuate 1.png" class="image" />
+      <div class="shapeOne"></div>
+      <div class="shapeTwo"></div>
+      <div class="shapeThree"></div>
+      <div class="shapeFour"></div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>

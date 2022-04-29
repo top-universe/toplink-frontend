@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Create Account</title>
+    <style>
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-Bold.ttf);
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-Regular.ttf);
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-ExtraBold.ttf);
+        font-weight: 800;
+      }
+
+      *,
+      *::after,
+      *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Metropolis", sans-serif;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1440px;
+        height: 1024px;
+        display: flex;
+      }
+
+      .firstColumn {
+        width: 50%;
+        padding: 7% 6%;
+      }
+
+      h2 {
+        font-size: 3rem;
+        font-weight: 800;
+      }
+
+      .para {
+        font-size: 20px;
+        line-height: 30px;
+        margin: 23px 0px 36px;
+      }
+
+      .signIn {
+        margin-top: 12px;
+      }
+
+      input {
+        font-family: inherit;
+        margin: 16px 0px 32px;
+        width: 100%;
+        height: 72px;
+        border: none;
+        border-radius: 5px;
+        background-color: #eee;
+        font-size: 1rem;
+        padding-left: 15px;
+      }
+
+      label {
+        font-family: inherit;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      button {
+        font-family: inherit;
+        background-color: #543864;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        width: 100%;
+        height: 72px;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 41px 0px 22px;
+        cursor: pointer;
+        outline: none;
+      }
+
+      button:hover {
+        background-color: #a5a1a8;
+        color: rgb(255, 255, 255);
+      }
+
+      .signUpAlt {
+        display: grid;
+        place-items: center;
+      }
+
+      .signUpImg img {
+        margin-top: 20px;
+        border: 1px solid black;
+        padding: 8px;
+        border-radius: 5px;
+      }
+
+      .facebook {
+        margin-left: 15px;
+      }
+
+      .secondColumn {
+        background-color: #543864;
+        position: relative;
+        width: 50%;
+        height: inherit;
+        display: grid;
+        place-content: center;
+        overflow: hidden;
+      }
+
+      .image {
+        z-index: 1;
+      }
+
+      .shapeOne {
+        position: absolute;
+        border-radius: 50%;
+        width: 495px;
+        height: 495px;
+        background-color: #ffbd69;
+        left: -1%;
+        bottom: -33%;
+      }
+
+      .shapeTwo {
+        position: absolute;
+        width: 574px;
+        height: 574px;
+        border-radius: 50%;
+        right: -28%;
+        bottom: -32%;
+        background-color: #ac8bbe;
+      }
+
+      .shapeThree {
+        position: absolute;
+        border-radius: 50%;
+        width: 495px;
+        height: 495px;
+        background-color: #ffbd69;
+        left: -1%;
+        top: -46%;
+      }
+
+      .shapeFour {
+        position: absolute;
+        width: 574px;
+        height: 574px;
+        border-radius: 50%;
+        right: -28%;
+        top: -40%;
+        background-color: #ac8bbe;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="firstColumn">
+        <div class="welcome">
+          <h2>Welcome to Synque</h2>
+          <div class="para">
+            <p>
+              Here you can create your personalized mini website <br />
+              for lorem ipseum dolor ite
+            </p>
+            <div class="signIn">
+              <p>Already have an account? <a href="#">Sign In</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="form">
+          <form action="">
+            <div>
+              <label for="username">Username</label> <br />
+              <input type="text" name="username" id="username" />
+            </div>
+            <div>
+              <label for="email">Email</label> <br />
+              <input type="text" name="email" id="email" />
+            </div>
+            <div>
+              <label for="password">Password</label> <br />
+              <input type="password" name="password" id="password" />
+            </div>
+            <button type="submit">Submit</button>
+            <div class="signUpAlt">
+              <p>or sign up with</p>
+              <div class="signUpImg">
+                <a href="#">
+                  <img src="/toplink-frontend-/html_template/assets/google 1.png" />
+                </a>
+                <a href="#">
+                  <img src="/toplink-frontend-/html_template/assets/facebook-logo-2019.png" class="facebook" />
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="secondColumn">
+        <img src="/toplink-frontend-/html_template/assets/Connected-cuate 1.png" class="image" />
+        <div class="shapeOne"></div>
+        <div class="shapeTwo"></div>
+        <div class="shapeThree"></div>
+        <div class="shapeFour"></div>
+      </div>
+    </div>
+    
+  </body>
+</html>
