@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,54 +8,68 @@
     <title>Report a Bug</title>
     <link rel="stylesheet" href="style.css">
     <style>
-
-        .container{
+        .container {
             width: 100%;
             display: grid;
             grid-template-columns: 300px calc(100% - 300px);
         }
         /* Sidebar styling begins here */
-        .container .left-sidebar{
+        
+        .container .left-sidebar {
             background-color: #543864;
-            height: 100vh; 
+            height: 100vh;
             padding: 1rem 1rem;
         }
-        .left-sidebar .logo{
+        
+        .left-sidebar .logo {
             display: flex;
             justify-content: space-between;
             color: #fff;
         }
-        .logo img, .logout img, .home-logout img{
+        
+        .logo img,
+        .logout img,
+        .home-logout img {
             margin-right: .3rem;
         }
-        .logo > div, .logout, .home-logout{
+        
+        .logo>div,
+        .logout,
+        .home-logout {
             display: flex;
             align-items: center;
             color: #fff;
         }
-        .left-sidebar{
+        
+        .left-sidebar {
             overflow: auto;
         }
-        .left-sidebar .links{
+        
+        .left-sidebar .links {
             margin-top: 4rem;
         }
-        .left-sidebar .links > li{
+        
+        .left-sidebar .links>li {
             list-style: none;
             margin-left: 4rem;
             margin-bottom: 1.5rem;
         }
-        .left-sidebar .links > li a{
+        
+        .left-sidebar .links>li a {
             display: flex;
             align-items: center;
             text-decoration: none;
             color: #ffffff;
             font-size: 16px;
         }
-        .left-sidebar li img, .left-sidebar li svg{
+        
+        .left-sidebar li img,
+        .left-sidebar li svg {
             margin-right: 1rem;
         }
-        .left-sidebar ul:last-child{
-            list-style: none;   
+        
+        .left-sidebar ul:last-child {
+            list-style: none;
             text-align: left;
             margin-top: 1.3rem;
             margin-left: 4.8rem;
@@ -62,60 +77,72 @@
             width: 150px;
             border-left: 1px solid #fff;
         }
-        .left-sidebar ul:last-child >li{
+        
+        .left-sidebar ul:last-child>li {
             list-style: none;
         }
-        .left-sidebar ul:last-child li a{
+        
+        .left-sidebar ul:last-child li a {
             text-decoration: none;
             color: #fff;
             font-size: 16px;
             border-radius: 10px;
         }
-
-        .left-sidebar ul:last-child li{
+        
+        .left-sidebar ul:last-child li {
             margin-bottom: 1rem;
         }
-        .left-sidebar ul:last-child li  a{
+        
+        .left-sidebar ul:last-child li a {
             text-decoration: none;
             color: #ffffff;
             font-size: 14px;
         }
         /* Sidebar ends here */
-
         /* Maincontent starts here */
-        .main-content{
+        
+        .main-content {
             height: 100vh;
             overflow: auto;
         }
-        .main-content .heading{
+        
+        .main-content .heading {
             padding: 2rem 1.5rem 1.2rem;
-            border-bottom: 1px solid #ccc ;
+            border-bottom: 1px solid #ccc;
         }
-        .main-content .heading h1{
+        
+        .main-content .heading h1 {
             margin-bottom: .7rem;
             font-size: 28px;
         }
-        .main-content .heading h4{
+        
+        .main-content .heading h4 {
             font-size: 16px;
             margin-bottom: .9rem;
         }
-        .main-content .heading p{
+        
+        .main-content .heading p {
             font-size: 14px;
             width: 70%;
         }
-        .main-content .form{
+        
+        .main-content .form {
             padding: 1.2rem;
         }
-        .main-content form{
+        
+        .main-content form {
             background-color: #F1EAF5;
             padding: 2rem 1rem;
             border-radius: 2px;
             max-width: 950px;
         }
-        .main-content form > div{
+        
+        .main-content form>div {
             margin-bottom: 1rem;
         }
-        .main-content form input, textarea{
+        
+        .main-content form input,
+        textarea {
             border: none;
             outline: none;
             width: 100%;
@@ -123,14 +150,17 @@
             border-radius: 16px;
             text-align: center;
         }
-        textarea{
+        
+        textarea {
             height: 10rem;
             padding-top: 1.5rem;
         }
-        .main-content form div:last-child{
+        
+        .main-content form div:last-child {
             text-align: center;
         }
-        .main-content form button{
+        
+        .main-content form button {
             width: 60%;
             background-color: #543864;
             color: #ffffff;
@@ -139,16 +169,17 @@
             height: 3rem;
             border-radius: 8px;
             margin-top: .5rem;
+            cursor: pointer;
         }
-
     </style>
 </head>
+
 <body>
     <div class="container">
         <section class="left-sidebar">
             <div class="logo">
                 <p>LOGO</p>
-                <div ><img src="assets\Back-icon.png" width="20px" alt="logout-image"><span>Back</span></div>
+                <div><img src="assets\Back-icon.png" width="20px" alt="logout-image"><span>Back</span></div>
             </div>
             <div class="flex-align-btw">
                 <ul class="links">
@@ -161,12 +192,24 @@
                             <span>Home</span>
                         </a>
                     </li>
-                    <li><a href="#" class="w-90"><img width="20px" src="assets\dashboard.png" alt=""> <span>Dashboard</span></a></li>
-                    <li><a href="#" class="w-85"><img width="20px" src="assets\analytics.png" alt=""> <span>Analytics</span></a></li>
-                    <li><a href="#" class="w-80"><img width="20px" src="assets\settings.png" alt=""> <span>Settings</span></a></li>
-                    <li><a href="#" class="w-70"><img width="20px" src="assets\Edit.png" alt=""> <span>Editor</span></a></li>
-                    <li><a href="#" class="w-90"><img width="20px" src="assets\commerce.png" alt=""> <span>Commerce</span></a></li>
-                    <li><a href="#" class="flex-align-center w-85 active"><img width="20px" src="assets\feedback-icon.png" alt=""><span>Feedback</span></a></li>
+                    <li>
+                        <a href="#" class="w-90"><img width="20px" src="assets\dashboard.png" alt=""> <span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-85"><img width="20px" src="assets\analytics.png" alt=""> <span>Analytics</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-80"><img width="20px" src="assets\settings.png" alt=""> <span>Settings</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-70"><img width="20px" src="assets\Edit.png" alt=""> <span>Editor</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-90"><img width="20px" src="assets\commerce.png" alt=""> <span>Commerce</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex-align-center w-85 active"><img width="20px" src="assets\feedback-icon.png" alt=""><span>Feedback</span></a>
+                    </li>
                     <ul class="hide">
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#" class="hover">Report a bug</a></li>
@@ -174,11 +217,11 @@
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </ul>
-                
+
                 <div class="logout"><img src="assets\logout.png" alt="logout-image"><span>Log out</span></div>
             </div>
         </section>
-        
+
         <section class="main-content">
             <div class="heading">
                 <div class="head flex-space-btw w-95">
@@ -187,8 +230,7 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.09874 0C2.6248 0 3.12931 0.210714 3.50129 0.585786C3.87327 0.960859 4.08224 1.46957 4.08224 2C4.08224 2.53043 3.87327 3.03914 3.50129 3.41421C3.12931 3.78929 2.6248 4 2.09874 4C1.57268 4 1.06817 3.78929 0.69619 3.41421C0.324211 3.03914 0.115234 2.53043 0.115234 2C0.115234 1.46957 0.324211 0.960859 0.69619 0.585786C1.06817 0.210714 1.57268 0 2.09874 0ZM2.09874 8C2.6248 8 3.12931 8.21071 3.50129 8.58579C3.87327 8.96086 4.08224 9.46957 4.08224 10C4.08224 10.5304 3.87327 11.0391 3.50129 11.4142C3.12931 11.7893 2.6248 12 2.09874 12C1.57268 12 1.06817 11.7893 0.69619 11.4142C0.324211 11.0391 0.115234 10.5304 0.115234 10C0.115234 9.46957 0.324211 8.96086 0.69619 8.58579C1.06817 8.21071 1.57268 8 2.09874 8ZM2.09874 16C2.6248 16 3.12931 16.2107 3.50129 16.5858C3.87327 16.9609 4.08224 17.4696 4.08224 18C4.08224 18.5304 3.87327 19.0391 3.50129 19.4142C3.12931 19.7893 2.6248 20 2.09874 20C1.57268 20 1.06817 19.7893 0.69619 19.4142C0.324211 19.0391 0.115234 18.5304 0.115234 18C0.115234 17.4696 0.324211 16.9609 0.69619 16.5858C1.06817 16.2107 1.57268 16 2.09874 16Z" fill="black"/>
                     </svg></div>
                 <h4>Help us fix errors on Synque. Help Synque serve you better</h4>
-                <p>Kindly fill out the form below to report errors on the Synque App.<br> 
-                    Knowing what bugs you means its halfway fixed.
+                <p>Kindly fill out the form below to report errors on the Synque App.<br> Knowing what bugs you means its halfway fixed.
                 </p>
             </div>
             <div class="form">
@@ -208,7 +250,8 @@
                 </form>
             </div>
         </section>
-       
+
     </div>
 </body>
+
 </html>
