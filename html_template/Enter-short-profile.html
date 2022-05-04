@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Enter your profile</title>
+    <style>
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-Bold.ttf);
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-Regular.ttf);
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/toplink-frontend-/html_template/assets/metropolis/Metropolis-ExtraBold.ttf);
+        font-weight: 800;
+      }
+
+      *,
+      *::after,
+      *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Metropolis", sans-serif;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1440px;
+        height: 1024px;
+        display: flex;
+      }
+
+      .firstColumn {
+        width: 50%;
+        padding: 7% 6%;
+      }
+
+      h2 {
+        margin-top: 88px;
+        font-size: 3rem;
+        font-weight: 800;
+      }
+
+      p {
+        font-size: 20px;
+        margin: 16px 0px 48px;
+      }
+
+      input {
+        font-family: inherit;
+        margin: 16px 0px 24px;
+        width: 100%;
+        height: 72px;
+        border: none;
+        border-radius: 5px;
+        background-color: #eee;
+        font-size: 20px;
+        padding: 0px 15px;
+        outline: none;
+      }
+
+      .name {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .name .names {
+        flex-basis: 48%;
+      }
+
+      .phone {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        position: relative;
+      }
+
+      select {
+        font-family: inherit;
+        font-weight: 400;
+        font-size: 20px;
+        width: 50%;
+        height: 72px;
+        border-radius: 5px;
+        background-color: #eee;
+        border: none;
+        outline: none;
+        margin-top: 16px;
+        padding: 20px;
+        appearance: none;
+        margin-right: 4%;
+      }
+
+      .phone img {
+        position: absolute;
+        right: 70%;
+        bottom: 50%;
+      }
+
+      .country {
+        position: relative;
+      }
+
+      .country select {
+        width: 100%;
+      }
+
+      .country img {
+        position: absolute;
+        top: 55%;
+        right: 3%;
+      }
+
+      label {
+        font-family: inherit;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      button {
+        font-family: inherit;
+        background-color: #543864;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        width: 100%;
+        height: 72px;
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 80px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #a5a1a8;
+        color: rgb(255, 255, 255);
+      }
+
+      .secondColumn {
+        background-color: #543864;
+        position: relative;
+        width: 50%;
+        height: inherit;
+        display: grid;
+        place-content: center;
+        overflow: hidden;
+      }
+
+      .shapeOne {
+        position: absolute;
+        border-radius: 50%;
+        width: 495px;
+        height: 495px;
+        background-color: #ffbd69;
+        left: -1%;
+        bottom: -33%;
+      }
+
+      .shapeTwo {
+        position: absolute;
+        width: 574px;
+        height: 574px;
+        border-radius: 50%;
+        right: -28%;
+        bottom: -32%;
+        background-color: #ac8bbe;
+      }
+
+      .shapeThree {
+        position: absolute;
+        border-radius: 50%;
+        width: 495px;
+        height: 495px;
+        background-color: #ffbd69;
+        left: -1%;
+        top: -46%;
+      }
+
+      .shapeFour {
+        position: absolute;
+        width: 574px;
+        height: 574px;
+        border-radius: 50%;
+        right: -28%;
+        top: -40%;
+        background-color: #ac8bbe;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="firstColumn">
+        <div class="returnArrow">
+          <img src="/toplink-frontend-/html_template/assets/Vector.png" />
+        </div>
+        <div class="welcome">
+          <h2>Welcome</h2>
+          <p>Let's get to know a bit about you!</p>
+        </div>
+        <div class="form">
+          <form>
+            <div class="name">
+              <div class="names">
+                <label for="firstName">First Name</label> <br />
+                <input type="text" name="firstName" id="firstName" />
+              </div>
+              <div class="names">
+                <label for="lastName">Last Name</label> <br />
+                <input type="text" name="lastName" id="lastName" />
+              </div>
+            </div>
+            <div class="phoneNum">
+              <label for="phoneNumber">Phone Number</label> <br />
+              <div class="phone">
+                <select name="phoneNumber" id="phoneNumber"></select>
+                <img src="/toplink-frontend-/html_template/assets/icon.png"/>
+                <input type="tel" name="phoneNumber" id="phoneNumber" />
+              </div>
+            </div>
+            <div>
+              <label for="countries">Country</label>
+              <div class="country">
+                <select name="" id=""></select>
+                <img src="/toplink-frontend-/html_template/assets/Arrow - Down 2.png" />
+              </div>
+            </div>
+            <button>Countinue</button>
+          </form>
+        </div>
+      </div>
+      <div class="secondColumn">
+        <img src="/toplink-frontend-/html_template/assets/Connected-cuate 1.png" class="image" />
+        <div class="shapeOne"></div>
+        <div class="shapeTwo"></div>
+        <div class="shapeThree"></div>
+        <div class="shapeFour"></div>
+      </div>
+    </div>
+  </body>
+</html>
