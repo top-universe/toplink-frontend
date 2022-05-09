@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visitors Page Media Screen</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1033px 1fr;
+      }
+
+      /* Maincontent Styles starts here */
+
+      .main-content {
+        background-color: #fff;
+      }
+
+      header {
+        position: relative;
+      }
+
+      .cover-image-container {
+        width: 100%;
+        height: 254px;
+        background-color: rgb(170, 166, 166);
+      }
+
+      .profile-pic-container {
+        width: 254px;
+        height: 254px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        left: 72px;
+        top: 127px;
+      }
+
+      .profile-name {
+        margin-top: 150px;
+        margin-left: 72px;
+      }
+
+      .profile-name .fullname {
+        font-size: 700;
+        line-height: 40px;
+      }
+
+      .profile-name .username {
+        font-size: 22px;
+        line-height: 40px;
+      }
+
+      .profile-info {
+        padding: 10px;
+      }
+
+      .profile-info .text {
+        font-size: 23px;
+        line-height: 40px;
+      }
+
+      .social-links {
+        background: #fcfcfc;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        padding: 15px;
+        gap: 15px;
+      }
+
+      .social-container {
+        background: #f5f5f5;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        padding: 15px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .tabs {
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tab {
+        justify-self: stretch;
+        padding: 15px;
+        border-bottom: 10px solid #543864;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        line-height: 40px;
+        cursor: pointer;
+        background-color: #ffffff;
+      }
+
+      .active-tab {
+        border-bottom: 10px solid #ffbd69;
+        color: gray;
+      }
+
+      .media-tab-content {
+        margin: 50px;
+        padding: 30px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        background-color: #ffffff;
+      }
+
+      .media-label {
+        background: #543864;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: #fcfcfc;
+        padding: 10px;
+        width: 150px;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        grid-auto-rows: 250px;
+        margin-top: 30px;
+      }
+
+      .media-con {
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+      }
+
+      .media-con > img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Main content styles ends here */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div></div>
+      <section class="main-content">
+        <header>
+          <div class="cover-image-container">
+            <img src="./assets/cover-pic.png" alt="" class="cover-image" />
+          </div>
+          <div class="profile-pic-container">
+            <img src="./assets/profile-pic.png" alt="" class="profile-pic" />
+          </div>
+          <div class="profile-name">
+            <h1 class="fullname fSize-md">Jane Doe</h1>
+            <h3 class="username">@ Jdoe</h3>
+          </div>
+          <div class="profile-info">
+            <p class="text">
+              Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+              Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+              Lorem Lorem Lorem Lorem
+            </p>
+          </div>
+
+          <div class="social-links">
+            <div class="social-container">
+              <div class="icon"><img src="./assets/fb-icon.png" alt="" /></div>
+              <p>Jane Doe</p>
+            </div>
+            <div class="social-container">
+              <div class="icon">
+                <img src="./assets/linked-in.png" alt="" />
+              </div>
+              <p>Jane Doe</p>
+            </div>
+            <div class="social-container">
+              <div class="icon"><img src="./assets/twitter.png" alt="" /></div>
+              <p>@janedoe21</p>
+            </div>
+            <div class="social-container">
+              <div class="icon"><img src="./assets/youtube.png" alt="" /></div>
+              <p>Jane Doe</p>
+            </div>
+            <div class="social-container">
+              <div class="icon">
+                <img src="./assets/instagram.png" alt="" />
+              </div>
+              <p>Jane_doe_21</p>
+            </div>
+          </div>
+        </header>
+
+        <section>
+          <div class="tabs">
+            <div class="tab fSize-md">My Links</div>
+            <div class="tab fSize-md active-tab">Media</div>
+          </div>
+
+          <!-- Section for Images -->
+          <div class="media-tab-content">
+            <div class="media-label">Images</div>
+            <div class="content-grid">
+              <div class="media-con">
+                <img src="./assets/media-image1.png" alt="" />
+              </div>
+              <div class="media-con">
+                <img src="./assets/media-image2.png" alt="" />
+              </div>
+              <div class="media-con">
+                <img src="./assets/media-image3.png" alt="" />
+              </div>
+              <div class="media-con">
+                <img src="./assets/media-image4.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <!-- End of Section for Images -->
+
+          <!-- Section for Videos -->
+          <div class="media-tab-content">
+            <div class="media-label">Videos</div>
+            <div class="content-grid">
+              <div class="media-con">
+                <img src="./assets/media-video.png" alt="" />
+              </div>
+              <div class="media-con">
+                <img src="./assets/media-video2.png" alt="" />
+              </div>
+              <div class="media-con">
+                <img src="./assets/media-video3.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <!-- End of Section for Videos -->
+
+          <!-- Section for Audios -->
+          <div class="media-tab-content">
+            <div class="media-label">Audios</div>
+            <div class="content-grid">
+              <div class="media-con">
+                <img src="./assets/media-audio.png" alt="" />
+              </div>
+              <div class="media-con">
+                <img src="./assets/media-audio2.png" alt="" />
+              </div>
+              <div class="media-con">
+                <img src="./assets/media-audio3.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <!-- End of Section for Audios -->
+        </section>
+      </section>
+      <div></div>
+    </div>
+  </body>
+</html>
