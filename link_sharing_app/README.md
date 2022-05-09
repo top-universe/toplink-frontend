@@ -1,4 +1,4 @@
-# link_sharing_app
+# synque-topuniverse
 
 ## Project setup
 ```
@@ -13,6 +13,11 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
 ```
 
 ### Customize configuration
