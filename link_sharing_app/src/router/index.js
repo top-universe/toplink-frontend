@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import HomeView from "../views/Sidebar/HomeView.vue";
 
 const routes = [
     {
@@ -8,14 +8,74 @@ const routes = [
         component: HomeView,
     },
     {
+        path: "/welcome",
+        name: "welcome",
+        component: () =>
+            import("../views/Login/WelcomeView.vue"),
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: () =>
+            import("../views/Login/LoginView.vue"),
+    },
+    {
+        path: "/short-profile",
+        name: "profile",
+        component: () =>
+            import("../views/Login/ShortProfileView.vue"),
+    },
+    {
+        path: "/settings",
+        name: "settings",
+        component: () =>
+            import("../views/Sidebar/SettingsView.vue"),
+    },
+    {
+        path: "/dashboard",
+        name: "dashboard",
+        component: () =>
+            import("../views/Sidebar/DashboardView.vue"),
+    },
+    {
+        path: "/account",
+        name: "account",
+        component: () =>
+            import("../views/Sidebar/AccountView.vue"),
+    },
+    {
+        path: "/commerce",
+        name: "commerce",
+        component: () =>
+            import("../views/Sidebar/CommerceView.vue"),
+    },
+    {
         path: "/faq",
         name: "faq",
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
-            import(/* webpackChunkName: "about" */ "../views/FaqView.vue"),
-    }
+            import(/* webpackChunkName: "about" */ "../views/Sidebar/Feedback/FaqView.vue"),
+    },
+    {
+        path: "/report",
+        name: "report",
+        component: () =>
+            import("../views/Sidebar/Feedback/ReportView.vue"),
+    },
+    {
+        path: "/suggest",
+        name: "suggest",
+        component: () =>
+            import("../views/Sidebar/Feedback/SuggestView.vue"),
+    },
+    {
+        path: "/contact-us",
+        name: "contact-us",
+        component: () =>
+            import("../views/Sidebar/Feedback/ContactView.vue"),
+    },
 ];
 
 const router = createRouter({
