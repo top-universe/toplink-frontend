@@ -1,5 +1,5 @@
 <template>
-  <main-sidebar />
+  <main-sidebar v-show="isLoggedin"></main-sidebar>
   <router-view />
 </template>
 
@@ -9,6 +9,11 @@ export default {
   name: "App",
   components: {
     "main-sidebar": MainSidebar,
+  },
+  data() {
+    return {
+      isLoggedin: true,
+    };
   },
 };
 </script>
@@ -74,5 +79,13 @@ li {
 
 button {
   cursor: pointer;
+}
+
+main {
+  flex: 1;
+  height: 100%;
+  background-color: #fcfcfc;
+  overflow-x: hidden;
+  margin-left: 331px;
 }
 </style>

@@ -65,14 +65,8 @@ export default {
 
 <style scoped>
 main {
-  flex: 1;
-  height: 100%;
   padding: 4rem 8rem 4rem 2.5rem;
-  background-color: #fcfcfc;
-  margin-left: 331px;
-  overflow-x: hidden;
 }
-
 .heading {
   padding-left: 3.2rem;
   margin-bottom: 4rem;
