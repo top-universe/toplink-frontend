@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/font/metropolis/Metropolis-Bold.ttf);
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/font/metropolis/Metropolis-Medium.ttf);
+        font-weight: 500;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/font/metropolis/Metropolis-Regular.ttf);
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: "Metropolis";
+        src: url(/font/metropolis/Metropolis-ExtraBoldItalic.ttf);
+        font-weight: 800;
+      }
+
+      *,
+      *::after,
+      *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style: none;
+      }
+
+      /* modal */
+      .popup {
+        position: fixed;
+        z-index: 10;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        background-color: rgba(0, 0, 0, 0.3);
+        place-items: center;
+        display: none;
+      }
+
+      .saveProfile {
+        width: 400px;
+        height: 350px;
+        background-color: #fff;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        position: relative;
+      }
+
+      .back {
+        margin-bottom: 2rem;
+      }
+
+      .changes,
+      .image {
+        margin-bottom: 4rem;
+      }
+
+      button {
+        width: 148px;
+        height: 48px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      .btn1 {
+        color: #fff;
+        background-color: #543864;
+      }
+
+      .savePopupButton > .cancel {
+        margin-right: 2.5rem;
+        background-color: white;
+        color: #543864;
+        border: 1px solid #543864;
+      }
+
+      .save {
+        width: 40px;
+        height: 15px;
+        font-size: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .addPicture {
+        width: 400px;
+        height: 350px;
+        background-color: #fff;
+        position: relative;
+        padding: 2.5rem;
+      }
+
+      .close {
+        position: absolute;
+        right: 5%;
+        top: 4%;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      .coverPicture {
+        display: grid;
+        place-items: center;
+      }
+
+      .coverPicture > p {
+        margin: 1.5rem 0 2rem;
+      }
+
+      .coverPicture > .fa-trash {
+        color: #543864;
+      }
+
+      .list {
+        margin-top: 2rem;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+
+      li > p {
+        padding-left: 2rem;
+      }
+
+      li > .fa-trash {
+        color: #543864;
+      }
+
+      .del {
+        color: red;
+      }
+
+      .editSocial {
+        width: 452px;
+        height: 622px;
+        background-color: #fff;
+        display: grid;
+        place-content: center;
+        position: relative;
+        display: none;
+      }
+
+      .editsocialMediaLinks {
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .editsocialMediaLinks h3 {
+        font-size: 15px;
+      }
+
+      .social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+      }
+
+      .socialMedia {
+        width: 190px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        padding: 0 8px;
+        margin-bottom: 10px;
+      }
+
+      .socialMediaAccount {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .socialMediaAccount img {
+        border: 2px solid #fff;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .fa-square-check {
+        color: gray;
+      }
+
+      .add {
+        margin-top: 1.5rem;
+      }
+
+      .fa-square-plus {
+        color: rgb(160, 160, 37);
+      }
+
+      .btn2 {
+        display: grid;
+        place-content: center;
+      }
+
+      /* content */
+      .container {
+        width: 100%;
+        line-height: 1.5rem;
+        font-family: "Metropolis", sans-serif;
+        font-weight: 400;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      i {
+        font-size: 20px;
+      }
+      .section {
+        width: 1280px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+      }
+
+      button {
+        background-color: #543864;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        font-family: inherit;
+        font-weight: 500;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .nav {
+        height: 118px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      .editNav {
+        display: flex;
+        align-items: center;
+        margin-left: 124px;
+        cursor: pointer;
+      }
+
+      .editNav > span {
+        margin-right: 2rem;
+      }
+
+      .editNav > p {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      .saveBtn {
+        margin-right: 107px;
+        padding: 12px 20px;
+      }
+
+      .profile {
+        width: 1107px;
+        height: 504px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        position: relative;
+        margin-bottom: 60px;
+      }
+
+      .profileCover {
+        height: 333px;
+        background-color: #d7d4d4;
+        text-align: center;
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+      }
+
+      .profilePicture {
+        height: 216.6300048828125px;
+        width: 221.020751953125px;
+        left: 46.125px;
+        top: 225px;
+        border-radius: 50%;
+        background-color: #d7d4d4;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        position: absolute;
+        border: 5px solid #fff;
+        cursor: pointer;
+      }
+
+      .form {
+        height: 705px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        display: grid;
+        place-content: center;
+        margin-bottom: 75px;
+      }
+
+      form {
+        width: 1026px;
+      }
+
+      .inputGroup {
+        position: relative;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background-color: #d7d4d4;
+        padding: 30px 20px 0;
+        font-family: inherit;
+      }
+
+      input {
+        height: 105px;
+        margin-bottom: 34px;
+        font-size: 30px;
+      }
+
+      textarea {
+        height: 241px;
+        font-size: 20px;
+        margin-top: 25px;
+      }
+
+      label {
+        font-family: inherit;
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        font-size: 1.5rem;
+        transition: 0.2s;
+      }
+
+      .media {
+        height: 1157px;
+        padding-top: 2rem;
+        position: relative;
+      }
+
+      .text {
+        margin-left: 127px;
+      }
+
+      .mediaLinks {
+        display: grid;
+        place-content: center;
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 964px;
+        height: 102px;
+        margin: 12px 0px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        padding: 0 3rem 0 2rem;
+      }
+
+      .link {
+        display: flex;
+        align-items: center;
+      }
+
+      .link p {
+        padding-left: 2rem;
+      }
+
+      .links span {
+        font-size: 20px;
+      }
+
+      .btnContainer {
+        width: 100%;
+        display: grid;
+        place-content: center;
+        margin-top: 70px;
+      }
+
+      .btn {
+        width: 112px;
+        height: 40px;
+      }
+
+      .personalize {
+        height: 162px;
+        margin: 75px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 134px;
+      }
+
+      .mediaDisplay {
+        height: 618px;
+        margin: 75px 0;
+        padding-top: 2rem;
+      }
+
+      .mediaPrivacy {
+        height: 520px;
+        margin-bottom: 4rem;
+        padding: 3rem 8rem;
+      }
+
+      .visibility {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+      }
+
+      .togglebtn {
+        width: 70px;
+        height: 35px;
+        background-color: #c4c4c4;
+        position: relative;
+        border-radius: 30px;
+        padding: 2px;
+        transition: all 1s ease-in-out;
+      }
+
+      .togglebtn > .slider {
+        width: 30px;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: all 1s ease-in-out;
+      }
+
+      .togglebtn.active {
+        background-color: #543864;
+      }
+
+      .togglebtn.active > .slider {
+        margin-left: 35px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- modals --->
+
+      <!-- Navbar Save btn content --->
+      <div class="popup">
+        <div class="saveProfile">
+          <div>
+            <button class="btn1 save">Save</button>
+          </div>
+          <p class="back">Save</p>
+          <span class="changes">Changes made will be applied</span>
+          <div class="savePopupButton">
+            <button class="cancel">Cancel</button>
+            <button class="btn1">Yes, Save</button>
+          </div>
+        </div>
+      </div>
+      <!-- add cover photo --->
+      <div class="popup">
+        <div class="addPicture">
+          <div class="close">X</div>
+          <div class="coverPicture">
+            <i class="fa-solid fa-image"></i>
+            <p>Cover Picture</p>
+            <span>Insert Cover Picture from</span>
+          </div>
+          <div class="list">
+            <ul>
+              <li>
+                <i class="fa-solid fa-camera"></i>
+                <p>Camera</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-images"></i>
+                <p>Library</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-trash"></i>
+                <p class="del">Delete Picture</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- add profile photo --->
+      <div class="popup">
+        <div class="addPicture">
+          <div class="close">X</div>
+          <div class="coverPicture">
+            <i class="fa-solid fa-image"></i>
+            <p>Profile Picture</p>
+            <span>Insert Profile Picture from</span>
+          </div>
+          <div class="list">
+            <ul>
+              <li>
+                <i class="fa-solid fa-camera"></i>
+                <p>Camera</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-images"></i>
+                <p>Library</p>
+              </li>
+              <li>
+                <i class="fa-solid fa-trash"></i>
+                <p class="del">Delete Picture</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- previous page --->
+      <div class="popup">
+        <div class="saveProfile">
+          <div class="close">X</div>
+          <div class="coverPicture">
+            <i class="fa-solid fa-caret-left"></i>
+            <p class="back">Go Back</p>
+            <span class="changes">Changes made will be discarded</span>
+          </div>
+          <div class="savePopupButton">
+            <button class="cancel">Cancel</button>
+            <button class="btn1">Yes, Go Back</button>
+          </div>
+        </div>
+      </div>
+      <!-- delete social media link--->
+      <div class="popup">
+        <div class="saveProfile">
+          <div class="close" id="close">X</div>
+          <div class="coverPicture">
+            <i class="fa-solid fa-trash"></i>
+            <p class="back">Delete Social Media Link</p>
+            <span class="changes"
+              >Are you sure you want to permanently <br />
+              delete this social media links?</span
+            >
+          </div>
+          <div class="savePopupButton">
+            <button class="cancel">Cancel</button>
+            <button class="btn1">Yes, Delete</button>
+          </div>
+        </div>
+      </div>
+      <!-- select social media link --->
+      <div class="popup">
+        <div class="editSocial">
+          <div class="close" id="close">X</div>
+          <div class="editsocialMediaLinks">
+            <h3>Select social Media Links to display on your profile page</h3>
+            <small>Only Top 5 links will be displayed on profile</small>
+          </div>
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/color/20/000000/instagram-new--v1.png"
+                />
+                <p>Instagram</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/fluency/20/000000/facebook-new.png"
+                />
+                <p>Facebook</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/external-justicon-flat-justicon/18/000000/external-twitch-social-media-justicon-flat-justicon.png"
+                />
+                <p>Twitch</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img src="https://img.icons8.com/color/20/000000/behance.png" />
+                <p>Behance</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/color/20/000000/discord-logo.png"
+                />
+                <p>Discord</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/ios-filled/20/000000/tiktok--v1.png"
+                />
+                <p>Tiktok</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/color/20/000000/linkedin-circled--v1.png"
+                />
+                <p>LinkedIn</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/color/20/000000/dribbble.png"
+                />
+                <p>Dribble</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/doodle/18/000000/quora--v1.png"
+                />
+                <p>Quora</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/doodle/18/000000/snapchat.png"
+                />
+                <p>Snapchat</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/color/20/000000/twitter--v1.png"
+                />
+                <p>Twitter</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/ios-filled/18/000000/github.png"
+                />
+                <p>Github</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/doodle/20/000000/reddit--v4.png"
+                />
+                <p>Reddit</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/color/20/000000/pinterest--v1.png"
+                />
+                <p>Pinterest</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/color/20/000000/youtube-play.png"
+                />
+                <p>Youtube</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/color/20/000000/soundcloud.png"
+                />
+                <p>Soundcloud</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social">
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/fluency/20/000000/spotify.png"
+                />
+                <p>Spotify</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+            <div class="socialMedia">
+              <div class="socialMediaAccount">
+                <img
+                  src="https://img.icons8.com/external-becris-lineal-becris/18/000000/external-add-mintab-for-ios-becris-lineal-becris-1.png"
+                />
+                <p>Custom</p>
+              </div>
+              <i class="fa-solid fa-square-check"></i>
+            </div>
+          </div>
+
+          <div class="social add">
+            <div class="socialMedia">
+              <p>Add custom link</p>
+              <i class="fa-solid fa-square-plus"></i>
+            </div>
+            <input type="text" />
+          </div>
+
+          <div class="btn2">
+            <button class="btn4">Save</button>
+          </div>
+        </div>
+      </div>
+      <!-- edit media --->
+      <div class="popup">
+        <div class="saveProfile">
+          <div class="close">X</div>
+          <div class="coverPicture">
+            <i class="fa-solid fa-trash"></i>
+            <p class="back">Edit Media</p>
+            <span class="changes">Select your media elements</span>
+          </div>
+          <div class="savePopupButton">
+            <button class="cancel">Cancel</button>
+            <button class="btn1">Yes, Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="nav section">
+          <div class="editNav" id="open">
+            <span>
+              <i class="fa-solid fa-caret-left"></i>
+            </span>
+            <p>Edit Profile</p>
+          </div>
+          <button class="saveBtn">save</button>
+        </div>
+
+        <div class="profile">
+          <div class="profileCover" id="open">
+            <span
+              ><i class="fa-solid fa-camera"></i><br />
+              Add Cover Picture <br />2mb or less</span
+            >
+          </div>
+          <div class="profilePicture" id="open">
+            <span
+              ><i class="fa-solid fa-camera"></i> <br />
+              Add Profile Picture <br />
+              2mb or less</span
+            >
+          </div>
+        </div>
+
+        <div class="form section">
+          <form action="">
+            <div class="inputGroup">
+              <label for="name">Name</label> <br />
+              <input type="text" name="name" id="name" />
+            </div>
+
+            <div class="inputGroup">
+              <label for="username">Username</label> <br />
+              <input type="text" name="username" id="username" />
+            </div>
+
+            <div class="inputGroup">
+              <label for="aboutUs">About Us</label>
+              <textarea name="aboutUs" id="aboutUs"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="media section">
+          <div class="text">
+            <h3>Social Media Links</h3>
+            <p>
+              Connect your favorite social media accounts and display a link in
+              your profile <br />
+              Only top 5 links will be displayed on profile
+            </p>
+          </div>
+          <div class="mediaLinks">
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>
+                  <span>Jane Doe</span><br />
+                  https://Facebook.com/user/jane%does234
+                </p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>
+                  <span>Jane Doe</span><br />
+                  https://Linkedin.com/jane%does20%/12/
+                </p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>
+                  <span>Jane Doe</span> <br />
+                  https://Twitter.com/_jane_does_21?tfgbfvbhbv
+                </p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>
+                  <span>Jane Doe</span><br />
+                  https://youtube/
+                </p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>
+                  <span>Jane Doe</span><br />
+                  https://Instagram.com/fhhdjanejfvfdoe@#$
+                </p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>
+                  <span>Display Name</span><br />
+                  https://Website.com
+                </p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>
+                  <span>Display Name</span><br />
+                  https://Website.com
+                </p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="btnContainer">
+              <button class="btn" id="open">Edit</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="personalize section">
+          <div>
+            <h3>Personalize</h3>
+            <p>Set outlook according to your taste</p>
+          </div>
+          <i class="fa-solid fa-caret-right"></i>
+        </div>
+
+        <div class="mediaDisplay section">
+          <div class="text">
+            <h3>Media</h3>
+            <p>
+              Display your Favorite media elements for other users visiting your
+              profile page to view
+            </p>
+          </div>
+          <div class="mediaLinks">
+            <div div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>Picture</p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>Video</p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="links">
+              <div class="link">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <p>Audio</p>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="btnContainer">
+              <button class="btn" id="open">Edit Media</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mediaPrivacy section">
+          <div class="visibility">
+            <div class="visibilityText">
+              <h3>Social Links Visibility</h3>
+              <p>
+                Allow other users visiting your profile page to view your social
+                links
+              </p>
+            </div>
+            <div class="togglebtn" onclick="this.classList.toggle('active')">
+              <div class="slider"></div>
+            </div>
+          </div>
+          <div class="visibility">
+            <div class="visibilityText">
+              <h3>Content Visibility</h3>
+              <p>
+                Allow other users visiting your profile page to view your
+                Favorite links
+              </p>
+            </div>
+            <div class="togglebtn" onclick="this.classList.toggle('active')">
+              <div class="slider"></div>
+            </div>
+          </div>
+          <div class="visibility">
+            <div class="visibilityText">
+              <h3>Media Visibility</h3>
+              <p>
+                Allow other users visiting your profile page to view your
+                Favorite media elements
+              </p>
+            </div>
+            <div class="togglebtn" onclick="this.classList.toggle('active')">
+              <div class="slider"></div>
+            </div>
+          </div>
+          <div class="visibility">
+            <div class="visibilityText">
+              <h3>Media Preview</h3>
+              <p>Preview media (Thumbnail images)</p>
+            </div>
+            <div class="togglebtn" onclick="this.classList.toggle('active')">
+              <div class="slider"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/a5d3becb5b.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
