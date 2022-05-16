@@ -1,5 +1,5 @@
 <template>
-  <main><h1>CommerceVew</h1></main>
+  <main><h1>CommerceView</h1></main>
 </template>
 
 <script>

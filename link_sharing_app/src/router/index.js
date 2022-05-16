@@ -3,7 +3,7 @@ import HomeView from "../views/Sidebar/HomeView.vue";
 
 const routes = [
     {
-        path: "/",
+        path: "/home",
         name: "home",
         component: HomeView,
     },
@@ -14,16 +14,28 @@ const routes = [
             import("../views/Login/WelcomeView.vue"),
     },
     {
-        path: "/login",
+        path: "/",
         name: "login",
         component: () =>
             import("../views/Login/LoginView.vue"),
     },
     {
-        path: "/short-profile",
+        path: "/profile",
         name: "profile",
         component: () =>
             import("../views/Login/ShortProfileView.vue"),
+    },
+    {
+        path: "/categories",
+        name: "categories",
+        component: () =>
+            import("../views/Login/CategoriesView.vue"),
+    },
+    {
+        path: "/congrats",
+        name: "congrats",
+        component: () =>
+            import("../views/Login/CongratView.vue"),
     },
     {
         path: "/settings",
@@ -71,11 +83,11 @@ const routes = [
             import("../views/Sidebar/Feedback/SuggestView.vue"),
     },
     {
-        path: "/contact-us",
-        name: "contact-us",
+        path: "/contact",
+        name: "contact",
         component: () =>
             import("../views/Sidebar/Feedback/ContactView.vue"),
-    },
+    }
 ];
 
 const router = createRouter({
