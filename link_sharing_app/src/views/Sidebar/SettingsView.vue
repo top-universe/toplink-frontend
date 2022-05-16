@@ -23,9 +23,9 @@
           </label>
         </div>
       </div>
-      <form>
+      <div>
         <h3>Profile Settings</h3>
-        <div class="form">
+        <form class="form-section">
           <div class="avatar">
             <img src="@/assets/images/profile-img.png" alt="Avatar" />
           </div>
@@ -81,10 +81,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </form>
 
         <button class="save-d-btn">Save Details</button>
-      </form>
+      </div>
       <div class="box">
         <h4>Change Password</h4>
         <div class="align-btn">
@@ -173,7 +173,6 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-block: 0.6rem 5rem;
-  width: 800px;
 }
 
 .settings p {
@@ -241,7 +240,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.form {
+.form-section {
   padding: 2.6rem 3.5rem 3.5rem 2.8rem;
   background: #ffffff;
   margin-bottom: 30px;
@@ -255,7 +254,7 @@ input:checked + .slider:before {
 .columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  column-gap: 16px;
+  gap: 16px;
 }
 
 .column {
@@ -336,6 +335,9 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .box button {
