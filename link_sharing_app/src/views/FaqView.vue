@@ -69,8 +69,7 @@ main {
   height: 100%;
   padding: 4rem 8rem 4rem 2.5rem;
   background-color: #fcfcfc;
-  margin-left: 331px;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .heading {
@@ -79,7 +78,7 @@ main {
 }
 
 .heading h2 {
-  font-size: 3.2rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
