@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account (Home) Page</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 300px calc(100% - 300px);
+      }
+      /* Sidebar styling begins here */
+      .container .left-sidebar {
+        background-color: #543864;
+        height: 100vh;
+        padding: 1rem 1rem;
+      }
+      .left-sidebar .logo {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+      }
+      .logo img,
+      .logout img,
+      .home-logout img {
+        margin-right: 0.3rem;
+      }
+      .backbtn-container {
+        background-color: #422454;
+        width: 24px;
+        height: 24px;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .backbtn-container:hover {
+        cursor: pointer;
+      }
+      .backbtn-container img {
+        margin: 0;
+      }
+      .logo > div,
+      .logout,
+      .home-logout {
+        display: flex;
+        align-items: center;
+        color: #fff;
+      }
+
+      .logout:hover {
+        cursor: pointer;
+      }
+      .left-sidebar {
+        overflow: auto;
+      }
+      .left-sidebar .links {
+        margin-top: 4rem;
+      }
+      .left-sidebar .links > li {
+        list-style: none;
+        margin-left: 4rem;
+        margin-bottom: 1.5rem;
+      }
+      .left-sidebar .links > li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 16px;
+      }
+      .left-sidebar li img,
+      .left-sidebar li svg {
+        margin-right: 1rem;
+      }
+      .left-sidebar ul:last-child {
+        list-style: none;
+        text-align: left;
+        margin-top: 1.3rem;
+        margin-left: 4.8rem;
+        padding-left: 1rem;
+        width: 150px;
+        border-left: 1px solid #fff;
+      }
+      .left-sidebar ul:last-child > li {
+        list-style: none;
+      }
+      .left-sidebar ul:last-child li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+
+      .left-sidebar ul:last-child li {
+        margin-bottom: 1rem;
+      }
+      .left-sidebar ul:last-child li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 14px;
+      }
+      /* Sidebar ends here */
+
+      /* Maincontent Styles starts here */
+
+      .main-content {
+        height: 100vh;
+        overflow-y: scroll;
+      }
+      .body {
+        overflow: hidden;
+      }
+      .header-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .hero-image {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .hero-image img {
+        width: 50px;
+        height: 50px;
+      }
+      .btn-section {
+        display: flex;
+        gap: 20px;
+      }
+      .btn {
+        height: 40px;
+        width: 100px;
+        border-radius: 8px;
+        padding: 12px 10px 12px 10px;
+        background-color: #543864;
+        color: #ffffff;
+        border: none;
+      }
+      .hero-header {
+        position: relative;
+      }
+      .hero-header img {
+        width: 100%;
+      }
+      .hero-image2 {
+        padding-left: 80px;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+        background: #FDFBFB;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+      }
+      .hero-image2-container img {
+        object-fit: cover;
+        object-position: center;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+      }
+      .hero-image2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 103px;
+        left: 40px;
+      }
+      .edit-btn {
+        width: 150px;
+        align-self: flex-end;
+      }
+      .profile-name {
+        padding-top: 95px;
+      }
+      .social-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 30px;
+        padding-bottom: 30px;
+        background: #FCFCFC;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+      }
+      .social-section div {
+        display: flex;
+        padding: 0 20px;
+        align-items: center;
+        width: 120px;
+        height: 40px;
+        background: #F5F5F5;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+      }
+      .content-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .content-section .tab {
+        border-bottom: 5px solid #422454;
+        padding: 20px;
+        text-align: center;
+      }
+      .content-section .tab-active {
+        border-bottom: 5px solid #FFBD69;
+      }
+      .content-area {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 20px;
+      }
+      .link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+      }
+      .link-content {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .link-content img {
+        width: 25px;
+        height: 25px;
+      }
+      .lc-title img {
+        width: 10px;
+        height: 10px;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 55px;
+        height: 30px;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        background-color: #ccc;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+
+      .switch input {
+        display: none;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        background-color: #B854F3;
+        left: 5px;
+        bottom: 5px;
+        border-radius: 20px;
+        transition: 0.4s;
+      }
+
+      /* input:checked + .slider {
+        background-color: #ff278c;
+      } */
+
+      input:checked + .slider:before {
+        transform: translateX(25px);
+        background-color: #fff;
+      }
+      .detail-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 100px 20px 30px 20px;
+      }
+      .detail-link-btn {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+      }
+      .detail-link img {
+        width: 15px;
+        height: 15px;
+      }
+      .group {
+        display: flex;
+        gap: 30px;
+      }
+
+      /* Main content styles ends here */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="left-sidebar">
+        <div class="logo">
+          <p><img src="./assets/logo.png" alt="" /></p>
+          <div class="backbtn-container">
+            <img src="./assets/caret-left-fill.svg" alt="" />
+          </div>
+        </div>
+        <div class="flex-align-btw">
+          <ul class="links">
+            <li>
+              <a href="#">
+                <svg
+                  width="19"
+                  height="21"
+                  viewBox="0 0 19 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.5734 0.971898C10.2833 0.697622 9.89924 0.5448 9.5 0.5448C9.10076 0.5448 8.71667 0.697622 8.42656 0.971898L0.857814 8.12502C0.626066 8.34432 0.441534 8.60863 0.315526 8.90176C0.189517 9.19488 0.124685 9.51065 0.125001 9.82971V18.5328C0.125415 19.1542 0.372528 19.7499 0.812022 20.1891C1.25152 20.6283 1.84742 20.875 2.46875 20.875H4.8125C5.4341 20.875 6.03024 20.6281 6.46978 20.1886C6.90932 19.749 7.15625 19.1529 7.15625 18.5313V14.625C7.15625 14.4178 7.23856 14.2191 7.38507 14.0726C7.53159 13.9261 7.7303 13.8438 7.9375 13.8438H11.0625C11.2697 13.8438 11.4684 13.9261 11.6149 14.0726C11.7614 14.2191 11.8438 14.4178 11.8438 14.625V18.5313C11.8438 19.1529 12.0907 19.749 12.5302 20.1886C12.9698 20.6281 13.5659 20.875 14.1875 20.875H16.5312C17.1529 20.875 17.749 20.6281 18.1885 20.1886C18.6281 19.749 18.875 19.1529 18.875 18.5313V9.82815C18.8749 9.50924 18.8097 9.1937 18.6834 8.90085C18.5572 8.60801 18.3725 8.34401 18.1406 8.12502L10.5734 0.968773V0.971898Z"
+                    fill="white"
+                  />
+                </svg>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="w-90"
+                ><img width="20px" src="./assets/dashboard.png" alt="" />
+                <span>Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="w-80"
+                ><img width="20px" src="./assets/settings.png" alt="" />
+                <span>Settings</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="flex-align-center w-85 active"
+                ><img
+                  width="20px"
+                  src="./assets/account-icon-black.png"
+                  alt=""
+                />
+                <span>My&nbsp;Account</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="w-90"
+                ><img width="20px" src="./assets/commerce.png" alt="" />
+                <span>Commerce</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="w-70"
+                ><img
+                  width="20px"
+                  src="./assets/feedback-icon-white.png"
+                  alt=""
+                /><span>Feedback</span></a
+              >
+            </li>
+            <!-- <ul class="hide">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Report a bug</a></li>
+              <li><a href="#" class="hover">Suggest a feature</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul> -->
+          </ul>
+
+          <div class="logout">
+            <img src="assets\logout.png" alt="logout-image" /><span
+              >Log out</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="main-content">
+        <!-- Your code starts here -->
+      <section class="header-section">
+        <div class="hero-image">
+          <img src="./assets/hero-image.png" alt="img">
+          <h4>Synq.ue/jdoe</h4>
+        </div>
+          <div class="btn-section">
+            <button class="btn">Preview</button>
+            <button class="btn">Copy Link</button>
+          </div>
+      </section>
+        <section class="hero-header">
+          <img src="./assets/header-image.png" alt="img">
+          <div class="hero-image2-container">
+            <img src="./assets/hero-image-2.png" alt="img">
+          </div>
+        </section>
+        <section class="hero-image2">
+          <button class="edit-btn btn">Edit Profile</button>
+          <div class="profile-name">
+            <h4>Jane Doe</h4>
+            <h5>@ Jdoe</h5>
+            <p>I am a UI/UX design specialist practicing for 7 years. You can connect with me on social media and check out my design portfolios and projects through my links. In my spare time, i enjoy reading and listening to music. You can also check out my playlist and bookshelf through my links.</p>
+          </div>
+        </section>
+        <section class="social-section">
+          <div><img src="./assets/facebook-logo.png" alt="facebook-logo"> Jane Doe</div>
+          <div><img src="./assets/linkedin-logo.png" alt="linkedin-logo"> Jane Doe</div>
+          <div><img src="./assets/twitter-logo.png" alt="twitter-logo">@janedoe21</div>
+          <div><img src="./assets/youtube-logo.png" alt="youtube-logo">Jane Doe</div>
+          <div><img src="./assets/instagram-logo.png" alt="instagram-logo">Jane_doe_21</div>
+        </section>
+        <section class="content-section">
+          <h2 class="tab tab-active">My Links</h2>
+          <h2 class="tab">Media</h2>
+        </section>
+        <section class="content-area">
+          <div class="link">
+            <div class="link-content">
+              <img src="./assets/listing-icon.png" alt="icon">
+              <div class="lc-title">
+                <p>Topskill</p>
+                <p>Topskill.com/acc/234?89/jane?doe#2</p>
+              </div>
+              <img src="./assets/link-icon.png" alt="">
+            </div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="link">
+            <div class="link-content">
+              <img src="./assets/listing-icon.png" alt="icon">
+              <div class="lc-title">
+                <p>Title <img src="./assets/edit2.png" alt="image"></p>
+                <p>Enter URL <img src="./assets/edit2.png" alt="image"></p>
+              </div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="link">
+            <div class="link-content">
+              <img src="./assets/listing-icon.png" alt="icon">
+              <div class="lc-title">
+                <p>Title <img src="./assets/edit2.png" alt="image"></p>
+                <p>Enter URL <img src="./assets/edit2.png" alt="image"></p>
+              </div>
+            </div>
+            <label class="switch">
+              <input type="checkbox"/>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="link">
+            <div class="link-content">
+              <img src="./assets/listing-icon.png" alt="icon">
+              <div class="lc-title">
+                <p>Title <img src="./assets/edit2.png" alt="image"></p>
+                <p>Enter URL <img src="./assets/edit2.png" alt="image"></p>
+              </div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="link">
+            <div class="link-content">
+              <img src="./assets/listing-icon.png" alt="icon">
+              <div class="lc-title">
+                <p>Title <img src="./assets/edit2.png" alt="image"></p>
+                <p>Enter URL <img src="./assets/edit2.png" alt="image"></p>
+              </div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </section>
+        <section class="detail-link">
+          <div class="group">
+            <div class="detail-link-btn">
+              <img src="./assets/Plus.png" alt="icon">
+              <p>Add Link</p>
+            </div>
+            <div class="detail-link-btn">
+              <img src="./assets/lock.png" alt="icon">
+              <p>Lock Position</p>
+            </div>
+          </div>
+          <div class="detail-link-btn">
+            <img src="./assets/Delete.png" alt="icon">
+            <p>Delete</p>
+          </div>
+        </section>
+        <!-- Your code ends here -->
+      </section>
+    </div>
+  </body>
+</html>
