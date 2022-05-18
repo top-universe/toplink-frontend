@@ -66,11 +66,6 @@ export default {
 <style scoped>
 main {
   padding: 4rem 8rem 4rem 2.5rem;
-<<<<<<< HEAD:link_sharing_app/src/views/FaqView.vue
-  background-color: #fcfcfc;
-  overflow: auto;
-=======
->>>>>>> upstream/master:src/pages/Sidebar/Feedback/FaqView.vue
 }
 .heading {
   padding-left: 3.2rem;
