@@ -65,8 +65,6 @@ html {
 
 #app {
   height: 100vh;
-  width: 100vw;
-  display: flex;
 }
 
 a {
@@ -74,10 +72,10 @@ a {
   color: inherit;
 }
 
-p {
+/* p {
   line-height: 2.4rem;
   letter-spacing: 0.5px;
-}
+} */
 
 li {
   list-style-type: none;
