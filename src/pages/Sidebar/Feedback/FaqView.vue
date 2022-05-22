@@ -73,7 +73,7 @@ main {
 }
 
 .heading h2 {
-  font-size: 3.2rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 

@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../pages/Sidebar/HomeView.vue";
 import LandingPage from "../pages/Landing/index";
+import Personalisation from "../pages/Personalisation/index";
 
 const routes = [
   {
     path: "/",
-    name: "landing-page",
+    name: "personalisation",
     component: LandingPage,
   },
   {
@@ -19,7 +20,7 @@ const routes = [
     component: () => import("../pages/Login/WelcomeView.vue"),
   },
   {
-    path: "/",
+    path: "/login",
     name: "login",
     component: () => import("../pages/Login/LoginView.vue"),
   },
@@ -84,6 +85,11 @@ const routes = [
     name: "contact",
     component: () => import("../pages/Sidebar/Feedback/ContactView.vue"),
   },
+  {
+    path: "/personalisation",
+    name: "personalisation",
+    component: Personalisation,
+  }
 ];
 
 const router = createRouter({
