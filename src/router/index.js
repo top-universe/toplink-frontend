@@ -7,7 +7,7 @@ const routes = [
   {
     path: "/",
     name: "personalisation",
-    component: Personalisation,
+    component: LandingPage,
   },
   {
     path: "/home",
@@ -85,6 +85,11 @@ const routes = [
     name: "contact",
     component: () => import("../pages/Sidebar/Feedback/ContactView.vue"),
   },
+  {
+    path: "/personalisation",
+    name: "personalisation",
+    component: Personalisation,
+  }
 ];
 
 const router = createRouter({
