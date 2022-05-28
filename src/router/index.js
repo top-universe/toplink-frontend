@@ -6,7 +6,7 @@ import Personalisation from "../pages/Personalisation/index";
 const routes = [
   {
     path: "/",
-    name: "personalisation",
+    name: "landingpage",
     component: LandingPage,
   },
   {

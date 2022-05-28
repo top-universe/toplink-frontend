@@ -6,7 +6,7 @@
     </div>
     <ul>
       <li>
-        <router-link to="/home" class="nav-link">
+        <router-link :to="{ name: 'home' }" class="nav-link">
           <svg
             class="icon"
             width="18"
@@ -24,7 +24,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/dashboard" class="nav-link">
+        <router-link :to="{ name: 'dashboard' }" class="nav-link">
           <svg
             class="icon"
             width="20"
@@ -45,7 +45,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/settings" class="nav-link">
+        <router-link :to="{ name: 'settings' }" class="nav-link">
           <svg
             class="icon"
             width="20"
@@ -66,7 +66,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/account" class="nav-link">
+        <router-link :to="{ name: 'account' }" class="nav-link">
           <svg
             class="icon"
             width="24"
@@ -84,7 +84,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/commerce" class="nav-link">
+        <router-link :to="{ name: 'commerce' }" class="nav-link">
           <svg
             class="icon"
             width="24"
@@ -108,7 +108,11 @@
       </li>
 
       <li>
-        <router-link to="/contact" @click="showMenu()" class="nav-link">
+        <router-link
+          :to="{ name: 'contact' }"
+          @click="showMenu()"
+          class="nav-link"
+        >
           <svg
             class="icon"
             width="22"
@@ -131,14 +135,14 @@
           />
         </router-link>
         <div v-show="isActive" class="drop-down">
-          <router-link to="/contact">Contact Us</router-link>
-          <router-link to="/report">Report a bug</router-link>
-          <router-link to="/suggest">Suggest a feature</router-link>
-          <router-link to="/faq">FAQs</router-link>
+          <router-link :to="{ name: 'contact' }">Contact Us</router-link>
+          <router-link :to="{ name: 'report' }">Report a bug</router-link>
+          <router-link :to="{ name: 'suggest' }">Suggest a feature</router-link>
+          <router-link :to="{ name: 'faq' }">FAQs</router-link>
         </div>
       </li>
     </ul>
-    <router-link to="/" class="log-out">
+    <router-link :to="{ name: 'landingpage' }" class="log-out">
       <img src="@/assets/icons/logout.svg" alt="logout" />
       <span>Logout</span>
     </router-link>
@@ -175,6 +179,7 @@ aside {
   flex-direction: column;
   height: 100%;
   width: 331px;
+  z-index: 20;
 }
 
 .logo {
@@ -228,6 +233,7 @@ a.router-link-exact-active .icon path {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  margin-top: 40%;
 }
 
 .drop-down {

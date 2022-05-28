@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="form-area animate__fadeInRight animate__fast animate__animated"
-  >
+  <section class="form-area">
     <div class="form-container">
       <router-link to="/welcome">
         <img src="@/assets/icons/arrow.png" />

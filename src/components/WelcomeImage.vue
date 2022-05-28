@@ -12,6 +12,9 @@ export default {
 
 <style scoped>
 aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
   height: 100%;
   width: 50%;
   background-color: var(--purple);
