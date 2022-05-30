@@ -1,6 +1,6 @@
 <template>
   <section
-    class="form-area animate__fadeInLeft animate__fast animate__animated"
+    class="form-area "
   >
     <div class="form-container">
       <div class="welcome">

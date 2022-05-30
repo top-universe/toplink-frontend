@@ -1,25 +1,10 @@
 <template>
-  <main-sidebar v-show="isLoggedin"></main-sidebar>
-  <router-view @show-sidebar="showMenu" />
+  <router-view />
 </template>
 
 <script>
-import MainSidebar from "@/components/Sidebar.vue";
 export default {
   name: "App",
-  components: {
-    "main-sidebar": MainSidebar,
-  },
-  data() {
-    return {
-      isLoggedin: false,
-    };
-  },
-  methods: {
-    showMenu() {
-      this.isLoggedin = !this.isLoggedin;
-    },
-  },
 };
 </script>
 
@@ -48,6 +33,7 @@ export default {
   --white: #fcfcfc;
   --black: #121212;
   --grey: #eeeeee;
+  --grey3: #ececec;
 }
 
 /* CSS RESET */
@@ -83,6 +69,7 @@ li {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 main {

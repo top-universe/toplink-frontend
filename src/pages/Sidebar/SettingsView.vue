@@ -1,4 +1,5 @@
 <template>
+  <sidebar />
   <main>
     <div class="navbar">
       <a href="#notification">Notifications</a>
@@ -128,7 +129,9 @@
 </template>
 
 <script>
+import Sidebar from "@/components/Sidebar.vue";
 export default {
+  components: { Sidebar },
   name: "SettingsView",
 };
 </script>

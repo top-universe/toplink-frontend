@@ -1,4 +1,5 @@
 <template>
+<sidebar/>
   <main>
     <div class="heading">
       <h2>FAQs</h2>
@@ -57,8 +58,9 @@
 
 <script>
 import AccordionTab from "@/components/AccordionTab.vue";
+import Sidebar from '@/components/Sidebar.vue';
 export default {
-  components: { AccordionTab },
+  components: { AccordionTab, Sidebar },
   name: "FaqView",
 };
 </script>
