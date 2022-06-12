@@ -25,87 +25,55 @@
       </button>
     </div>
     <div class="overlay" v-show="showModal">
-      <div class="carousel-container">
-        <div
-          class="main-carousel"
-          data-flickity='{ "cellAlign": "left", "contain": true }'
-        >
-          <div class="carousel-cell card">
-            <img
-              src="@/assets/icons/cancel.png"
-              alt="close modal"
-              @click="toggleModal()"
-            />
-            <h1>Tips on Navigating synq.ue</h1>
-            <span>A shareable profile link</span>
-            <p>
-              Did you know that you can actually share links to your profile
-              with clients, prospective clients, friends and anyone at all you
-              wish to?. Just click on the orange button at the top right corner
-              of your screen.
-            </p>
-          </div>
-          <div class="carousel-cell card">
-            <img
-              src="@/assets/icons/cancel.png"
-              alt="close modal"
-              @click="toggleModal()"
-            />
-            <h1>Tips on Navigating synq.ue</h1>
-            <span>Help us fix errors on Synque </span>
-            <p>
-              Did you know that you can actually share links to your profile
-              with clients, prospective clients, friends and anyone at all you
-              wish to?. Just click on the orange button at the top right corner
-              of your screen.
-            </p>
-          </div>
-          <div class="carousel-cell card">
-            <img
-              src="@/assets/icons/cancel.png"
-              alt="close modal"
-              @click="toggleModal()"
-            />
-            <h1>Tips on Navigating synq.ue</h1>
-            <span>A shareable profile link</span>
-            <p>
-              Did you know that you can actually share links to your profile
-              with clients, prospective clients, friends and anyone at all you
-              wish to?. Just click on the orange button at the top right corner
-              of your screen.
-            </p>
-          </div>
-          <div class="carousel-cell card">
-            <img
-              src="@/assets/icons/cancel.png"
-              alt="close modal"
-              @click="toggleModal()"
-            />
-            <h1>Tips on Navigating synq.ue</h1>
-            <span>Self-evaluation Analytics.</span>
-            <p>
-              Did you know that you can actually share links to your profile
-              with clients, prospective clients, friends and anyone at all you
-              wish to?. Just click on the orange button at the top right corner
-              of your screen.
-            </p>
-          </div>
-        </div>
-
-        <button class="btn">Next</button>
-      </div>
+      <carousel :items="items" @close-modal="toggleModal()" />
     </div>
   </main>
 </template>
 
 <script>
 import Sidebar from "@/components/Sidebar.vue";
+import Carousel from "@/components/Carousel.vue";
+const items = [
+  {
+    title: "Tips on Navigating synque",
+    description: "A shareable profile link",
+    sub: `Did you know that you can actually share links to your profile
+          with clients, prospective clients, friends and anyone at all you
+          wish to? Just click on the orange button at the top right corner
+          of your screen.`,
+  },
+  {
+    title: "Tips on Navigating synque",
+    description: "Help us fix errors on Synque",
+    sub: `Did you know that you can actually share links to your profile
+          with clients, prospective clients, friends and anyone at all you
+          wish to? Just click on the orange button at the top right corner
+          of your screen.`,
+  },
+  {
+    title: "Tips on Navigating synque",
+    description: "A shareable profile link",
+    sub: `Did you know that you can actually share links to your profile
+          with clients, prospective clients, friends and anyone at all you
+          wish to? Just click on the orange button at the top right corner
+          of your screen.`,
+  },
+  {
+    title: "Tips on Navigating synque",
+    description: "Self-evaluation Analytics.",
+    sub: `Did you know that you can actually share links to your profile
+          with clients, prospective clients, friends and anyone at all you
+          wish to? Just click on the orange button at the top right corner
+          of your screen.`,
+  },
+];
 export default {
-  components: { Sidebar },
+  components: { Sidebar, Carousel },
   name: "HomeView",
   data() {
     return {
-      showModal: false,
+      items,
+      showModal: true,
     };
   },
   methods: {
@@ -136,62 +104,6 @@ main {
   height: 100%;
   width: 100%;
   background-color: rgba(249, 238, 238, 0.5);
-}
-
-.carousel-container {
-  width: 70%;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
-  background-color: white;
-}
-
-.carousel-container .btn {
-  margin-bottom: 30px;
-  width: 15%;
-  border-radius: 5px;
-  padding-block: 13px;
-  font-size: 16px;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
-}
-
-.main-carousel,
-.carousel-cell {
-  border-radius: 10px;
-}
-
-.card {
-  display: block;
-  background-color: white;
-  position: relative;
-  padding-block: 40px 24px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.card h1 {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.card img {
-  position: absolute;
-  right: 35px;
-  top: 20px;
-  cursor: pointer;
-}
-
-.card span {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.card p {
-  font-size: 16px;
-  font-weight: 500;
-  max-width: 71%;
-  margin-inline: auto;
-  margin-block: 35px;
 }
 
 .home-content {

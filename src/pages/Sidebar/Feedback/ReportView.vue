@@ -7,6 +7,7 @@
 import Sidebar from "@/components/Sidebar.vue";
 export default {
   name: "ReportView",
+  components:{Sidebar}
 };
 Sidebar;
 </script>
