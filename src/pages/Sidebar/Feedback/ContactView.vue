@@ -1,14 +1,17 @@
 <template>
-<sidebar/>
+  <sidebar />
   <main>Contact Us</main>
 </template>
 
 <script>
-import Sidebar from '@/components/Sidebar.vue';
+import Sidebar from "@/components/Sidebar.vue";
 export default {
   name: "ContactView",
-
-    Sidebar};
+  components: { Sidebar },
+  mounted() {
+    this.isActive = true;
+  },
+};
 </script>
 
 <style>

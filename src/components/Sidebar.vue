@@ -108,10 +108,10 @@
       </li>
 
       <li>
-        <router-link
-          :to="{ name: 'contact' }"
+        <div
           @click="showMenu()"
           class="nav-link"
+          :class="{ 'drop-down-btn': isActive }"
         >
           <svg
             class="icon"
@@ -133,12 +133,20 @@
             src="@/assets/icons/arrow-down.svg"
             alt="dropdown"
           />
-        </router-link>
+        </div>
         <div v-show="isActive" class="drop-down">
-          <router-link :to="{ name: 'contact' }">Contact Us</router-link>
-          <router-link :to="{ name: 'report' }">Report a bug</router-link>
-          <router-link :to="{ name: 'suggest' }">Suggest a feature</router-link>
-          <router-link :to="{ name: 'faq' }">FAQs</router-link>
+          <router-link :to="{ name: 'contact' }" @click="showMenu()"
+            >Contact Us</router-link
+          >
+          <router-link :to="{ name: 'report' }" @click="showMenu()"
+            >Report a bug</router-link
+          >
+          <router-link :to="{ name: 'suggest' }" @click="showMenu()"
+            >Suggest a feature</router-link
+          >
+          <router-link :to="{ name: 'faq' }" @click="showMenu()"
+            >FAQs</router-link
+          >
         </div>
       </li>
     </ul>
@@ -210,10 +218,13 @@ aside .nav-link {
 
 .nav-link:hover {
   background-color: rgb(84, 56, 100);
+  cursor: pointer;
 }
 
-aside li a.router-link-exact-active,
-aside li a.router-link-exact-active:hover {
+aside li .nav-link.router-link-exact-active,
+aside li .nav-link.router-link-exact-active:hover,
+.drop-down-btn,
+.drop-down-btn:hover {
   background-color: var(--yellow);
   color: var(--black);
 }
@@ -224,7 +235,8 @@ aside li a.router-link-exact-active:hover {
   text-align: center;
 }
 
-a.router-link-exact-active .icon path {
+.nav-link.router-link-exact-active .icon path,
+.drop-down-btn .icon path {
   fill: black;
   transition: 0.25s;
 }
@@ -254,8 +266,8 @@ a.router-link-exact-active .icon path {
   letter-spacing: 0.1px;
 }
 
-.drop-down a:hover,
-.drop-down a:focus {
+.drop-down a.router-link-exact-active,
+.drop-down a.router-link-exact-active:hover {
   color: var(--yellow);
   transition: color 0.25s;
 }
